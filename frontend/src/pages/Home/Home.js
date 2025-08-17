@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="home">
       <header className="header">
-        <h1>File Upload to AWS S3</h1>
+        <h1>File Uploader</h1>
         <p>Upload and manage your files securely</p>
       </header>
       
