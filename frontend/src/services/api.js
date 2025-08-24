@@ -9,15 +9,21 @@ export const uploadFile = async (file) => {
   const formData = new FormData();
   formData.append('file', file);
   
+  console.log('Uploading to:', `${API_BASE_URL}/upload`);
+  console.log('File:', file.name, 'Size:', file.size);
+  
   try {
     const response = await axios.post(`${API_BASE_URL}/upload`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
+      withCredentials: true, // Add this for CORS with credentials
     });
+    console.log('Upload successful:', response.data);
     return response.data;
   } catch (error) {
     console.error('Error uploading file:', error);
+    console.error('Error details:', error.response?.data);
     throw error;
   }
 };

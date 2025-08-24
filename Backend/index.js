@@ -8,12 +8,23 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://aws-proejct.vercel.app',
-    'https://aws-proejct.onrender.com',
-    'https://your-frontend-domain.vercel.app' // Add your frontend domain here
-  ],
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'https://aws-proejct.vercel.app',
+      'https://aws-proejct.onrender.com'
+    ];
+    
+    // Allow any Vercel domain
+    if (origin.endsWith('.vercel.app') || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    
+    return callback(new Error('Not allowed by CORS'));
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
