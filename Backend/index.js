@@ -8,9 +8,15 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: ['http://localhost:3000','https://aws-proejct.vercel.app/'],
+  origin: [
+    'http://localhost:3000',
+    'https://aws-proejct.vercel.app',
+    'https://aws-proejct.onrender.com',
+    'https://your-frontend-domain.vercel.app' // Add your frontend domain here
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 app.use(express.json());

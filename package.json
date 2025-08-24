@@ -1,0 +1,20 @@
+{
+  "name": "aws-file-upload-project",
+  "version": "1.0.0",
+  "description": "AWS S3 File Upload Application with React Frontend and Node.js Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd Backend && npm start",
+    "dev": "cd Backend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "install-all": "npm install && cd Backend && npm install && cd ../frontend && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["aws", "s3", "file-upload", "react", "nodejs"],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
