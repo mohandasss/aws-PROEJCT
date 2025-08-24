@@ -35,10 +35,7 @@ Backend – REST API (/upload, /files, /download/:key, /delete/:key)
 AWS S3 – Stores files in bucket blog-bucketss
 
 🚀 Deployment Links
-
-Frontend (Vercel): https://aws-proejct.vercel.app
-
-Backend (Render): https://aws-proejct.onrender.com
+ live - https://aws-proejct.vercel.app/
 
 ⚡ Tech Stack
 
@@ -50,10 +47,6 @@ Cloud: Amazon S3, IAM
 
 Hosting: Vercel (Frontend), Render (Backend)
 
-📦 Installation & Setup
-🔹 1. Clone the repository
-git clone https://github.com/your-username/aws-s3-file-manager.git
-cd aws-s3-file-manager
 
 🔹 2. Setup Backend
 cd backend
